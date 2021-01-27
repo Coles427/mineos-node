@@ -79,9 +79,9 @@ if [ ! -z "$USE_HTTPS" ]; then
   sed -i 's/use_https = .*/use_https = '${USE_HTTPS}'/g' /etc/mineos.conf
   echo >&2 "Setting use_https to: " $USE_HTTPS
   if [[ -z $SERVER_PORT ]] && [ "$USE_HTTPS" = "true"  ]; then
-    Port=8443
+    Port=80
   elif [[ -z $SERVER_PORT ]] && [ "$USE_HTTPS" = "false"  ]; then
-    Port=8080
+    Port=80
   else
     Port=$SERVER_PORT
   fi
